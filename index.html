@@ -52,8 +52,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
  	let allergyPercent and coldPercent be variables*/
 	
 	function diagnosis(){
-		var allergyPercent = allergy_count*4/100;
-		var coldPercent = cold_count*4/100;
+		var allergyPercent = allergy_count/100*4;
+		var coldPercent = cold_count/100*4;
 		document.getElementById("results").innerHTML = "Probability it is allergies = " + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%";
 	}
 	
@@ -140,15 +140,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
-		<a onclick="allergyAdd();" class="w3-btn w3-green"> Yes</a>
-		<a onclick="coldAdd();" class="w3-btn w3-green"> No</a>
-		
+		<a href="#five" onclick="allergyAdd();" class="w3-btn w3-green"> Yes</a>
+		<a href="#five" onclick="coldAdd();" class="w3-btn w3-green"> No</a>		
+	</div><!--Added question and buttons-->
+</div>
+
+<div class="page" id="five">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
+
+	<div id="content" class="w3-container">
 		<a onclick="diagnosis();" class="w3-btn w3-green"> See Results</a>
 		<!--Results will be displayed with the following p-->	
 		<p id="results"></p>
-				
-	</div><!--Added question and buttons for answer together with results button that will direct to the results-->
-</div>
+	</div><!--results button that will direct to the results-->
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
