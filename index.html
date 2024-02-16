@@ -50,12 +50,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	/*Create function to be called by results button
  	let allergyPercent and coldPercent be variables
-  	*/
+  	Fix results function with parenthesis*/
 	
 	function diagnosis(){
-		var allergyPercent = (allergy_count/4)*100;
-		var coldPercent = (cold_count/4)*100;
-		document.getElementById("results").innerHTML = "Probability it is allergies = " + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%";
+		var allergyPercent = (allergy_count/(allergy_count + cold_count))*100;
+		var coldPercent = (cold_count/(allergy_count + cold_conut))*100;
+		resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%";
 	}
 	
   </script>
@@ -146,7 +146,36 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div><!--Added question and buttons-->
 </div>
 
+<!--Added two more questions-->
+			
 <div class="page" id="five">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+
+	<!--Question for cold-->
+	<div id="content" class="w3-container">
+		<p>Do you have yellow or green discharge from nose?</p>
+		<a href="#six" onclick="coldAdd();" class="w3-btn w3-green"> Yes</a>
+		<a href="#six" onclick="allergyAdd();" class="w3-btn w3-green"> No</a>		
+	</div><!--Added question and buttons-->
+</div>
+
+<div class="page" id="six">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+
+	<!--Question for allergy-->
+	<div id="content" class="w3-container">
+		<p>Do your symptoms get worse when staying outside for a long period of time?</p>
+		<a href="#seven" onclick="allergyAdd();" class="w3-btn w3-green"> Yes</a>
+		<a href="#seven" onclick="coldAdd();" class="w3-btn w3-green"> No</a>		
+	</div><!--Added question and buttons-->
+</div>
+
+
+<div class="page" id="seven">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
 	</div>
