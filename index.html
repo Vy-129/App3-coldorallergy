@@ -49,10 +49,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	/*Create function to be called by results button
  	let allergyPercent and coldPercent be variables*/
+	
 	function diagnosis(){
-		var allergyPercent = allergy_count * 4 / 100;
-		var coldPercent = cold_count * 4 / 100;
-		document.getElementByld("results").innerHTML = "Probability it is allergies = " + allergyPercent + "<br> Probability it is a cold = " + coldPercent;
+		var allergyPercent = allergy_count*4/100;
+		var coldPercent = cold_count*4/100;
+		document.getElementByld("results").innerHTML = "Probability it is allergies = " + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%";
 	}
 	
   </script>
@@ -138,9 +139,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
-		<button onclick="allergyAdd();" class="w3-btn w3-green"> Yes<button/>
-		<button onclick="coldAdd();" class="w3-btn w3-green"> No</button>
-		<button onclick="diagnosis();" class="w3-btn w3-green"> See Results</button>
+		<a onclick="allergyAdd();" class="w3-btn w3-green"> Yes</a>
+		<a onclick="coldAdd();" class="w3-btn w3-green"> No</a>
+		
+		<a onclick="diagnosis();" class="w3-btn w3-green"> See Results</a>
 		<!--Results will be displayed with the following p-->	
 		<p id="results"></p>
 				
