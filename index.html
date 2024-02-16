@@ -42,13 +42,19 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         function allergyAdd(){
             allergy_count = allergy_count + 1;
-		alert(allergy_count);
-
         }
 
         function coldAdd(){
             cold_count = cold_count + 1;
         }
+
+	function allergyPercent{
+		return allergyAdd() * 100 / 4;
+	}
+
+	function coldPercent{
+		return coldAdd() * 100 / 4;
+	}
 
   </script>
 
@@ -150,7 +156,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 			/*Try to display results function 
   			First error: put an extra > after p*/
 			var resultText = document.getElementByld("results");
-			resultText.innerHTML = "Probability it is allergies=" + allergyPercent + "<br> Probability it is a cold=" + coldPercent;
+			resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent;
 		</script>
 	</div>
 	
