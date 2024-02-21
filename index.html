@@ -17,10 +17,15 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+Creating a survey app with a series of questions to calculate the probability of a user having a cold or allergies. 
+Experience with Javascript, HTML, and CSS
+	Create functions with different variables
+	Create buttons that direct to another hmtl code 
+	Create an app with different pages
+	Comment on code
  
 Known Issues:
-blah, blah, blah, blah
+Results are not displayed directly on the last page, the results page; instead, a page pops up with results.
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
@@ -36,10 +41,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
+	//variables used to compute functions of allergy and cold counts when users click on buttons
         var allergy_count = 0;
         var cold_count = 0;
+	//variable used to compute results
 	var resultText = document.getElementById("seven");
 
+	//functions to compute allergy and cold counts when users click on buttons accordingly
         function allergyAdd(){
           	allergy_count = allergy_count + 1;
         }
@@ -50,12 +58,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	/*Create function to be called by results button
  	let allergyPercent and coldPercent be variables
-  	Fix results function with parenthesis*/
-	
+  	Fix results function with parenthesis
+   	Results cannot be called by id "results" after adding 2 last additional questions*/
 	function diagnosis(){
 		var allergyPercent = (allergy_count/6)*100;
 		var coldPercent = (cold_count/6)*100;
 		document.getElementById("seven").innerHTML = "Probability it is allergies = " + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%";
+		//id "results" does not work, have to change to id "seven", as seven page, for function to work
 	}
 	
   </script>
@@ -97,12 +106,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+	<!--Changed color of button to green-->
 
 <div class="page" id="one">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
-	
+
+	<!--Page one is dedicated to question one with buttons to answer and direct to page 2-->
     	<div id="content" class="w3-container">
 		<p>Are your eyes watery and itchy?</p>
 		<a href="#two" onclick="allergyAdd();" class="w3-btn w3-green"> Yes</a>
@@ -114,12 +125,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
-	
+
+	<!--Page two is dedicated to question two with buttons to answer and direct to page 3-->
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?</p>
 		<a href="#three" onclick="coldAdd();" class="w3-btn w3-green"> Yes<a/>
 		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-green"> No<a/>
-	</div><!--Added question with buttons-->
+	</div><!--Added question with buttons with collor-->
 </div>	
 
 <div class="page" id="three">
@@ -127,6 +139,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<h1>Question 3</h1>
 	</div>
 
+	<!--Page two is dedicated to question three with buttons to answer and direct to page 4-->
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
 		<a href="#four" onclick="coldAdd();" class="w3-btn w3-green"> Yes<a/>
@@ -138,7 +151,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div>
-
+	
+	<!--Page two is dedicated to question two with buttons to answer and direct to page 3-->
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
 		<a href="#five" onclick="allergyAdd();" class="w3-btn w3-green"> Yes</a>
@@ -146,14 +160,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div><!--Added question and buttons-->
 </div>
 
-<!--Added two more questions-->
+<!--Added two more additional questions-->
 			
 <div class="page" id="five">
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 5</h1>
 	</div>
 
-	<!--Question for cold-->
+	<!--Page five is dedicated to an additional question for cold with answer buttons that direct to page 6-->
 	<div id="content" class="w3-container">
 		<p>Do you have yellow or green discharge from nose?</p>
 		<a href="#six" onclick="coldAdd();" class="w3-btn w3-green"> Yes</a>
@@ -166,7 +180,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<h1>Question 6</h1>
 	</div>
 
-	<!--Question for allergy-->
+	<!--Page six is dedicated to an additional question for allergies with answer buttons that direct to page 7, results page-->
 	<div id="content" class="w3-container">
 		<p>Do your symptoms get worse when staying outside for a long period of time?</p>
 		<a href="#seven" onclick="allergyAdd();" class="w3-btn w3-green"> Yes</a>
@@ -180,11 +194,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<h1>Results</h1>
 	</div>
 
+	<!--Page seven is for displaying results
+	Results will be displayed and computed after hitting the "See Results" button on page-->
 	<div id="content" class="w3-container">
 		<a onclick="diagnosis();" class="w3-btn w3-green"> See Results</a>
 		<!--Results will be displayed with the following p-->	
 		<p id="results"></p>
 	</div><!--results button that will direct to the results-->
+	<!--id results don't work in the function, have to use id seven for functions after consulting with mentors-->
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
